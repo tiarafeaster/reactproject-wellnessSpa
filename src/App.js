@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Directory from "./components/DirectoryComponent";
 import "./App.css";
+import { PACKAGES } from "./shared/packages";
 
 class App extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        packages: PACKAGES
+      };
+    }
+
 	render() {
 		return (
 			<div className="App">
@@ -12,7 +20,7 @@ class App extends Component {
 						<NavbarBrand href="/">Zen Den Wellness Retreat</NavbarBrand>
 					</div>
 				</Navbar>
-        <Directory />
+        <Directory packages ={this.state.packages} />
 			</div>
 		);
 	}
