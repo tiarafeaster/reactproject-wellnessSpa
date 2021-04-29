@@ -3,6 +3,8 @@ import Directory from "./DirectoryComponent";
 import RateInfo from "./RateInfoComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
+import Home from "./HomeComponent";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { PACKAGES } from "../shared/packages";
 
 class Main extends Component {
@@ -10,29 +12,26 @@ class Main extends Component {
 		super(props);
 		this.state = {
 			packages: PACKAGES,
-			selectedRates: null,
 		};
 	}
 
-	onRateSelect(rateId) {
-		this.setState({ selectedRates: rateId });
-	}
-
 	render() {
+		const HomePage = () => {
+			return <Home />;
+		};
+
 		return (
 			<div>
 				<Header />
-				<Directory
-					packages={this.state.packages}
-					onClick={(rateId) => this.onRateSelect(rateId)}
-				/>
-				<RateInfo
-					rates={
-						this.state.packages.filter(
-							(rate) => rate.id === this.state.selectedRates
-						)[0]
-					}
-				/>
+				<Switch>
+					<Route path="/home" component={HomePage} />
+					<Route
+						exact
+						path="/directory"
+						render={() => <Directory packages={this.state.packages} />}
+					/>
+					<Redirect to="/home" />
+				</Switch>
 				<Footer />
 			</div>
 		);
