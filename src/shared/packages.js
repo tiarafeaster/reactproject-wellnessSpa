@@ -1,4 +1,3 @@
-
 export const PACKAGES = [
 	{
 		id: 0,
@@ -6,8 +5,16 @@ export const PACKAGES = [
 		image: "assets/images/standard-room.jpeg",
 		description:
 			" The all-inclusive standard room is a nested inside a block of hotel-like rooms.",
-		amenities:
-			"Included in this package are: All spa services, access to one restaurant, choice of one group or individual therapy session, daily yoga and meditation.",
+		amenities: [
+			{
+				id: 0,
+				rateId: 0,
+				spa: "Manicure, Pedicure, Massage, Sauna, Mud Bath",
+				holistic: "Yoga, Meditation",
+				restaurant: "Zen Vegetarian Restaurant",
+				therapy: " One group or individual therapy session",
+			},
+		],
 	},
 	{
 		id: 1,
@@ -15,8 +22,17 @@ export const PACKAGES = [
 		image: "assets/images/cabin-room.jpeg",
 		description:
 			"The all-inclusive cabin room is nestled inside the woods of our spa.",
-		amenities:
-			"Included in this package are: All spa services, access to both restaurants, choice of two group or individual therapy sessions, daily yoga and meditation (including goat yoga when available), access to infinity pool.",
+		amenities: [
+			{
+				id: 1,
+				rateId: 1,
+				spa: "Manicure, Pedicure, Massage, Sauna, Mud Bath",
+				holistic: "Yoga, Goat Yoga (when available), Meditation, Nature Hike",
+				restaurant: "Zen Vegetarian Restaurant, Wellness Hibachi and Sushi",
+				therapy: "Two group or individual therapy sessions",
+				pool: "Access to infinity pool",
+			},
+		],
 	},
 	{
 		id: 2,
@@ -24,7 +40,17 @@ export const PACKAGES = [
 		image: "assets/images/villa-room.jpeg",
 		description:
 			"The all-inclusive cabin room is nestled in it's own hot spring river and waterfalls.",
-		amenities:
-			"Included in this package are: All spa services, access to both restaurants, choice of 4 group or individual therapy sessions, daily yoga and meditation (including goat yoga when available), access to infinity pool, exclusive access to pivate hot spring river and waterfall.",
+		amenities: [
+			{
+				id: 2,
+				rateId: 2,
+				spa: "Manicure, Pedicure, Massage, Sauna, Mud Bath",
+				holistic: "Yoga, Goat Yoga (when available), Meditation, Nature Hike",
+				restaurant: "Zen Vegetarian Restaurant, Wellness Hibachi and Sushi",
+				therapy: "Four group or individual therapy sessions",
+				pool: "Access to infinity pool",
+				extra: "Exclusive access to private hot spring river and waterfall.",
+			},
+		],
 	},
 ];
