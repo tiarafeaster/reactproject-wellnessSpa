@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
 import Directory from "./DirectoryComponent";
-import { PACKAGES } from "../shared/packages";
 import RateInfo from "./RateInfoComponent";
+import Header from "./HeaderComponent";
+import Footer from "./FooterComponent";
+import { PACKAGES } from "../shared/packages";
 
 class Main extends Component {
 	constructor(props) {
@@ -20,16 +21,19 @@ class Main extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar dark color="primary">
-					<div className="container">
-						<NavbarBrand href="/">Zen Den Wellness Retreat</NavbarBrand>
-					</div>
-				</Navbar>
+				<Header />
 				<Directory
 					packages={this.state.packages}
-					onClick={rateId => this.onRateSelect(rateId)}
+					onClick={(rateId) => this.onRateSelect(rateId)}
 				/>
-				<RateInfo rates={this.state.packages.filter(rate => rate.id === this.state.selectedRates)[0]} />
+				<RateInfo
+					rates={
+						this.state.packages.filter(
+							(rate) => rate.id === this.state.selectedRates
+						)[0]
+					}
+				/>
+				<Footer />
 			</div>
 		);
 	}
