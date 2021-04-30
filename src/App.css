@@ -16,6 +16,10 @@ h2 {
 	color: #22313f;
 }
 
+li {
+    list-style: none;
+}
+
 .card-img-overlay .card-title {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.5);

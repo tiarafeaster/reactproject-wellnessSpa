@@ -6,8 +6,10 @@ function RenderCard({ item }) {
 	return (
 		<Card>
 			<CardImg src={item.image} alt={item.service} />
-			<CardTitle>{item.service}</CardTitle>
-			<CardText>{item.description}</CardText>
+			<CardBody>
+				<CardTitle>{item.service}</CardTitle>
+				<CardText>{item.description}</CardText>
+			</CardBody>
 		</Card>
 	);
 }
@@ -19,7 +21,7 @@ function Home(props) {
 				<div className="col-md m-1">
 					<RenderCard item={props.holistic} />
 				</div>
-                {/*need to fix so that prop shows up for each separate amenity */}
+				{/*need to fix so that prop shows up for each separate amenity */}
 				<div className="col-md m-1">
 					<RenderCard item={props.holistic} />
 				</div>

@@ -46,6 +46,21 @@ class Main extends Component {
 			);
 		};
 
+		const RatesWithId = ({ match }) => {
+			return (
+				<RateInfo
+					rates={
+						this.state.packages.filter(
+							(rates) => rates.id === +match.params.ratesId
+						)[0]
+					}
+					amenities={this.state.amenities.filter(
+						(amenities) => amenities.rateId === +match.params.ratesId
+					)}
+				/>
+			);
+		};
+
 		return (
 			<div>
 				<Header />
@@ -54,9 +69,10 @@ class Main extends Component {
 					<Route
 						exact
 						path="/directory"
-						render={() => <Directory rate={this.state.packages} />}
+						render={() => <Directory rates={this.state.packages} />}
 					/>
 					<Route exact path="/contactus" component={Contact} />
+					<Route path="/directory/:ratesId" component={RatesWithId} />
 					<Redirect to="/home" />
 				</Switch>
 				<Footer />

@@ -1,7 +1,7 @@
 export const AMENITIES = [
 	{
 		id: 0,
-        rateID: 0,
+        rateId: 0,
 		spa: "manicure, pedicure, massage, sauna, mud bath",
 		holistic: "yoga, meditation",
 		restaurant: "Zen Vegetarian Restaurant",

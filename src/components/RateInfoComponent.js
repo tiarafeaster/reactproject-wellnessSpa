@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
+import {
+	Card,
+	CardImg,
+	CardBody,
+	CardText,
+	Breadcrumb,
+	BreadcrumbItem,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
 function RenderRate({ rates }) {
 	return (
@@ -7,7 +15,6 @@ function RenderRate({ rates }) {
 			<Card>
 				<CardImg top src={rates.image} alt={rates.room} />
 				<CardBody>
-					<CardTitle>{rates.room}</CardTitle>
 					<CardText>{rates.description}</CardText>
 				</CardBody>
 			</Card>
@@ -43,8 +50,20 @@ function RateInfo(props) {
 		return (
 			<div className="container">
 				<div className="row">
+					<div className="col">
+						<Breadcrumb>
+							<BreadcrumbItem>
+								<Link to="/directory">Directory</Link>
+							</BreadcrumbItem>
+							<BreadcrumbItem active>{props.rates.room}</BreadcrumbItem>
+						</Breadcrumb>
+						<h2>{props.rates.room}</h2>
+						<hr />
+					</div>
+				</div>
+				<div className="row">
 					<RenderRate rates={props.rates} />
-					<RenderAmenities amenities={props.rates.amenities} />
+					<RenderAmenities amenities={props.amenities} />
 				</div>
 			</div>
 		);
