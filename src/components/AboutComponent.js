@@ -6,7 +6,6 @@ import {
 	CardBody,
 	CardHeader,
     CardImg,
-	Media,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -55,17 +54,17 @@ function RenderRestaurant({ restaurant }) {
 function About(props) {
 	const outdoors = props.outdoors.map((outdoor) => {
 		return (
-			<Media tag="li" key={outdoor.id}>
+			<Card key={outdoor.id}>
 				<RenderOutdoor outdoor={outdoor} />
-			</Media>
+			</Card>
 		);
 	});
 
 	const restaurants = props.restaurants.map((restaurant) => {
 		return (
-			<Media tag="li" key={restaurant.id}>
+			<Card key={restaurant.id}>
 				<RenderRestaurant restaurant={restaurant} />
-			</Media>
+			</Card>
 		);
 	});
 
@@ -102,7 +101,7 @@ function About(props) {
 					<h3>Featured Amenities</h3>
 				</div>
 				<div className="col-md-6 mt-4">
-					<Media list>{outdoors}</Media>
+					<Card>{outdoors}</Card>
 				</div>
 			</div>
 			<div className="row row-content">
@@ -110,7 +109,7 @@ function About(props) {
 					<h3>Featured Restaurants</h3>
 				</div>
 				<div className="col-md-6 mt-4">
-					<Media list>{restaurants}</Media>
+					<Card>{restaurants}</Card>
 				</div>
 			</div>
 		</div>

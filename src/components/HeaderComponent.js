@@ -45,7 +45,7 @@ class Header extends Component {
 	}
 
 	handleBooking(event) {
-		alert(`Thank you ${this.name.value}! We will see you on!!`);
+		alert(`Thank you ${this.name.value}! We will see you on!! ${this.date.value}! We are excited to have you for ${this.numNights.value} days!!`);
 		this.toggleModal();
 		event.preventDefault();
 	}
@@ -159,7 +159,12 @@ class Header extends Component {
 							</FormGroup>
 							<FormGroup>
 								<Label htmlFor="rates">Number of Nights</Label>
-								<Input type="select" id="numNights" name="numNights">
+								<Input
+									type="select"
+									id="numNights"
+									name="numNights"
+									innerRef={(input) => (this.numNights = input)}
+								>
 									<option>3</option>
 									<option>5</option>
 									<option>7</option>
@@ -168,7 +173,12 @@ class Header extends Component {
 							</FormGroup>
 							<FormGroup>
 								<Label htmlFor="date">Select Dates</Label>
-								<Input type="date" id="date" name="date"></Input>
+								<Input
+									type="date"
+									id="date"
+									name="date"
+									innerRef={(input) => (this.date = input)}
+								></Input>
 							</FormGroup>
 							<Button type="submit" value="submit" color="primary">
 								Book
