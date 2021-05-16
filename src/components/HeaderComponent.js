@@ -17,7 +17,6 @@ import {
 	Label,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import { PACKAGES } from "../shared/packages";
 
 class Header extends Component {
 	constructor(props) {
@@ -45,7 +44,9 @@ class Header extends Component {
 	}
 
 	handleBooking(event) {
-		alert(`Thank you ${this.name.value}! We will see you on!! ${this.date.value}! We are excited to have you for ${this.numNights.value} days!!`);
+		alert(
+			`Thank you ${this.name.value}! We will see you on!! ${this.date.value}! We are excited to have you for ${this.numNights.value} days!!`
+		);
 		this.toggleModal();
 		event.preventDefault();
 	}
